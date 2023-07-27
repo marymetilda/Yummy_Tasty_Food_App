@@ -1,0 +1,24 @@
+{
+  "name": "namasthe-react",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Mary Metilda",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-personal.com:marymetilda/Namasthe-React.git"
+  },
+  "keywords": [],
+  "author": "Metilda",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
