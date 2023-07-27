@@ -136,6 +136,12 @@ React is a library. It can be imported as a javascript file in the code and it g
   - Diagnostic
   - Error Handling
   - Host app on HTTPs
-  - Tree Shaking
+  - Tree Shaking - remove unsed code
   - Different dev and production bundles
     command for development: npx parcel build index.html
+
+- production build
+  - npx parcel build index.html
+
+- when parcel dev is executed it generates a development bin in the project and its hosted into localhost1234. 
+When it generates a development bin it put it inthe dist folder.
