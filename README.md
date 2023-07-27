@@ -121,6 +121,7 @@ React is a library. It can be imported as a javascript file in the code and it g
   - rm -rf .parcel-cache
 
 - parcel:
+
   - Dev build
   - provides local server
   - HMR = Hot Module Replacement (Refresh the page automatically)
@@ -141,7 +142,11 @@ React is a library. It can be imported as a javascript file in the code and it g
     command for development: npx parcel build index.html
 
 - production build
+
   - npx parcel build index.html
 
-- when parcel dev is executed it generates a development bin in the project and its hosted into localhost1234. 
-When it generates a development bin it put it inthe dist folder.
+- when parcel dev is executed it generates a development bin in the project and its hosted into localhost1234.
+  When it generates a development bin it put it inthe dist folder.
+
+- browserslist.dev
+- In package.json we should mention what all browsers should support our project
