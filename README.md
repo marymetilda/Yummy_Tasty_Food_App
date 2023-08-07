@@ -176,7 +176,40 @@ React is a library. It can be imported as a javascript file in the code and it g
     - Functional Component - NEW
 
 - React Functional component
+
   - react functional component is just a javascript function which returs a jsx element
   - component should start with a capital letter
 
 - jsx sanitises tha data from api
+
+## Taking is cheap and show me the code
+
+- before building app do planig and draw wireframe
+
+  - Header
+    - logo
+    - Nav Items
+  - Body
+    - Search
+    - Restaurantcontainer
+      - RestaurantCard
+        - Img
+        - Name of Restaurant
+        - Star rating
+        - cuisine
+        - delevery time
+  - Footer
+    - Copyright
+    - Links
+    - Adress
+    - Contact
+
+- component composition
+
+  - calling a component inside another component is known as component composition
+
+- config driven UI
+
+  - controlling the UI, how the UI looks like using config/data. The config come from backend.
+
+- Do not use index as key on mapping.
