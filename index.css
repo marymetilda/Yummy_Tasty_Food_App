@@ -24,16 +24,18 @@
 }
 
 .restaurant-card {
-  width: 200px;
-  background-color: #f0f0f0;
-  border: 1px solid #f0f0f0;
-  padding: 5px;
-  margin: 5px;
+  width: 300px;
+  background-color: #e5ecef;
+  border: 4px solid #e5ecef;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
 }
 
 .restaurant-card:hover {
-  border: 1px solid black;
+  border: 4px solid #a0a0a0;
   cursor: pointer;
+  scale: 110%;
 }
 
 .search {
@@ -43,10 +45,41 @@
 .restaurant-logo {
   width: 100%;
   height: 45%;
+  border-radius: 8px;
 }
 
 .restaurant-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  margin: 5px;
+  margin-top: 20px;
+}
+
+.filter-btn {
+  margin: 20px 0px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.rating-time-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cuisines {
+  height: 30px;
+}
+
+.restuarant-name {
+  height: 30px;
+}
+
+.restuarant-content-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px;
+}
+
+.body {
+  background-color: rgb(242, 247, 247);
 }
