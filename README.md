@@ -150,3 +150,33 @@ React is a library. It can be imported as a javascript file in the code and it g
 
 - browserslist.dev
 - In package.json we should mention what all browsers should support our project
+
+## Laying the foundation
+
+- Just like dom elements in react we have react elements which are more like dom elements.
+
+- JSX
+
+  - JSX is a javascript syntax which is easier to create react element.
+
+  - jsx is not a part of react
+  - jsx makes the coding easy
+  - jsx is not html inside javascript
+  - jsx has html/xml like syntax
+  - jsx is not pue javascript
+  - jsx is transplied before it reaches the js engine by parcel-babel.
+  - in html we give class and in jsx it is className
+  - in html attributes use hiphens but in jsx it should be in camelCase
+  - if the jsx is in multiple line it should be wrapped in round brackets
+
+- React Component
+
+  - There are two types of components in react
+    - Class based component - OLD
+    - Functional Component - NEW
+
+- React Functional component
+  - react functional component is just a javascript function which returs a jsx element
+  - component should start with a capital letter
+
+- jsx sanitises tha data from api
