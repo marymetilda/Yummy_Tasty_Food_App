@@ -213,3 +213,46 @@ React is a library. It can be imported as a javascript file in the code and it g
   - controlling the UI, how the UI looks like using config/data. The config come from backend.
 
 - Do not use index as key on mapping.
+
+- React is efficient in dom manipulation.
+- React is fast because it can do faster dom manipulation.
+- It can do efficient dom manipulation.
+
+# React Hooks
+
+- Normal JS utility functions written by facebook developers
+- useState()
+- useEffect()
+
+- useState
+  - State Variable
+  - it maintains the state of the component
+  - Whenever a state variable updates react rerender the component
+
+# React Algoritham
+
+- React uses Reconciliation Algoritham
+- It is also known as React Fiber
+
+- Whenever we have the UI react will create a Virtual DOM of it
+
+  - Virtual DOM
+    - Virtual DOM is not Actual DOM
+      - Actual DOM
+        - DOM are the tags (eg: <div> <img> ect.)
+    - Virtual DOM is a representation of the Actual DOM
+    - Virtual DOM is basically those react elements.
+    - Virtual DOM is nothing but normal react object(may have nested object).
+
+- Diff Algoritham
+
+  - Diff Algoritham finds out the difference between two virtual DOMs.
+
+- When we click of the top rated restaurants button, it finds out the difference between the old virtual DOM and the new virtual DOM.
+
+- It will calculate the differce and it will apply the DOM on every render cycle
+
+- This whole algoritham is known as React Fiber.
+- In React 16 a new algoritham to update the dom came out the new algoritham is known as react fiber
+- React fiber is a new way of finding the diff and updating the DOM.
+- object representation of the html element by js is virtual dom
