@@ -27,7 +27,7 @@ const Body = () => {
   };
 
   // Conditional rendering
-  return !listOfRestaurants.length ? (
+  return !listOfRestaurants?.length ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -43,17 +43,17 @@ const Body = () => {
           <button
             onClick={() => {
               // Filter the restraunt caards and update the UI
-              // searchTex
+              // searchText
               console.log(listOfRestaurants);
 
               const filteredRestro = listOfRestaurants.filter((restro) => {
-                restro.info.name
+                return restro.info.name
                   .toLocaleLowerCase()
                   .includes(searchText.toLocaleLowerCase());
                 // console.log(restro.info.name.includes(searchText));
               });
               console.log(filteredRestro);
-              // setListOfRestaurants(filteredRestro);
+              setFilteredRestaurant(filteredRestro);
             }}
           >
             Search

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/logo.jpeg";
 
 const Header = () => {

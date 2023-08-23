@@ -308,3 +308,33 @@ React is a library. It can be imported as a javascript file in the code and it g
 - State react variable
   - Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
   - When re-rendering react is finding fifference of old virtual dom and new virtual dom
+
+# useEffect
+
+- useEffect is basically called after every render of the component.
+- but since we put dependancy array it changes the behavior of the render.
+- If we put no dependancy array it will render every time when the component render.
+- If the dependancy array is empty, then useEffect is called on only initial render.
+- If we put something on the dependancy array, it is only called when the dependancy changes.
+
+## React router dom
+
+- where ever we have to use routes, we have to create a routing configuration
+- import { createBrowserRouter } from "react-router-dom";
+- createBrowserRouter will create a routing configuration for us.
+- creating routing configuration inside our app router:- we are developing a router and we will be passing this configuration inside the createBrowserRouter.
+- Configuration means that some information that will descide what will happen on a specific route
+  - an information that will tell the browser router that what will happen on a specific path.
+- createBrowserRouter take a list of paths
+
+- RouterProvider
+
+  - RouterProvider will provide our routing configuration to the app
+
+- React router dom gives as access to an important hook useRouterError
+- It gives more information about the error
+
+- children routers
+
+- Never use anger tags in react, It will reload the whole page
+- 
