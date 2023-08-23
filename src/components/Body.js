@@ -47,13 +47,11 @@ const Body = () => {
               console.log(listOfRestaurants);
 
               const filteredRestro = listOfRestaurants.filter((restro) => {
-                restro.info.name
+                return restro.info.name
                   .toLocaleLowerCase()
                   .includes(searchText.toLocaleLowerCase());
-                // console.log(restro.info.name.includes(searchText));
               });
-              console.log(filteredRestro);
-              // setListOfRestaurants(filteredRestro);
+              setFilteredRestaurant(filteredRestro);
             }}
           >
             Search
