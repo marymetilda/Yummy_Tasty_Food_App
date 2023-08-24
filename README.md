@@ -337,4 +337,21 @@ React is a library. It can be imported as a javascript file in the code and it g
 - children routers
 
 - Never use anger tags in react, It will reload the whole page
-- 
+- use Link component from react-router-dom
+- it works exactly like anger tags
+
+## Routing
+
+- There are two types of routing that we can have in our web application.
+
+  - 1. Client side routing
+    - not making any network call
+  - 2. Server side routing
+    - we make a network call and the page is coming from server
+
+- Single page application
+
+  - It is one page and only the components getting rendered.
+
+- Dynamic routing
+  - `:` tells that that part is dynamic
