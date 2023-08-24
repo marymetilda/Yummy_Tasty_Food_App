@@ -1,4 +1,4 @@
-import CDN_LINK from "../utils/constants";
+import { CDN_LINK } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { restData } = props;
@@ -8,11 +8,11 @@ const RestaurantCard = (props) => {
 
   return (
     <div className="restaurant-card">
-        <img
-          className="restaurant-logo"
-          src={CDN_LINK + cloudinaryImageId}
-          alt="resturant logo"
-        />
+      <img
+        className="restaurant-logo"
+        src={CDN_LINK + cloudinaryImageId}
+        alt="resturant logo"
+      />
       <div className="restuarant-content-container">
         <h3 className="restuarant-name">{name}</h3>
         <p className="cuisines">{cuisines.join(", ")}</p>
