@@ -256,3 +256,55 @@ React is a library. It can be imported as a javascript file in the code and it g
 - In React 16 a new algoritham to update the dom came out the new algoritham is known as react fiber
 - React fiber is a new way of finding the diff and updating the DOM.
 - object representation of the html element by js is virtual dom
+
+## Monolith and Microservises
+
+- In monolith all the things such as backend serives, UI servies, authentication servies ect. in one project.
+  So if there is some change in anything the whole app need to be deployed.
+
+- In microservises all these are different projects. and all these projects togather form the app.
+- And this is known as separation of concerns and follows single responsibility priciple where
+  each and every servies has it's own job.
+- our project now a UI microservise
+
+- All the servieses run their own specific ports.
+- All these ports can be mapped to domain main.
+
+- There are two ways to fetch the data.
+
+  - As soon as our page loads we can make an api call, and when we get the data we can render it on the UI.
+  - The second approch is as soon as the page loads we will render our UI,
+
+  1. loads ==> API ==> Render
+  2. loads ==> Render ==> API ==> Render with new data
+
+- second method is the better approch, and it gives the better UX
+
+- The render cycles of react are very fast.
+
+- A hook is nothing but a normal javascript function which react gives to us, it has it's own specific use cases.
+
+- Our browsers block us to call api from one origin to different origin.
+
+- CORS chrome extension
+
+- Shimmer UI
+
+  - It is kind of like we load fake page until we get actual data from the api
+
+- Why we use state variable?
+
+  - Javascript variables will be updated, but it won't refresh the component, and the UI will not be updated.
+  - If we want something to be change in the component we use state vaiable. It will update the UI. It will rerender the component.
+
+- rendering
+
+  - call the function
+
+- re-rendering
+
+  - call the function once again
+
+- State react variable
+  - Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
+  - When re-rendering react is finding fifference of old virtual dom and new virtual dom
