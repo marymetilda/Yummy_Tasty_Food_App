@@ -354,4 +354,60 @@ React is a library. It can be imported as a javascript file in the code and it g
   - It is one page and only the components getting rendered.
 
 - Dynamic routing
+
   - `:` tells that that part is dynamic
+
+- Never update state variable directly
+
+## React class components
+
+- component did mount
+
+  - run when after the component is rendereds
+
+- life cycle method of react class component
+
+  - parent constructor
+  - parent render
+
+    - child1 constructor
+    - child1 render
+
+    - child2 constructor
+    - child2 render
+
+    - child3 constructor
+    - child3 render
+
+  <DOM UPDATED - IN SINGLE BATCH>
+
+  - child1 component did mount
+  - child2 component did mount
+  - child3 component did mount
+
+  - parent component did mount
+
+- Componenet did mount is used to make an API call
+
+- https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+- updating dom is the most expencing thing.
+- so react try to batch up all the child rendering
+
+- Mounting life cycle
+
+  - Constructior(dummy)
+  - Render(dummy)
+    - <HTML dummy >
+  - Component Did Moung
+    <API Call>
+    <this.setState> -> State variable is updated
+
+- Update life cycle
+
+  - render(API data)
+    <HTML (new API data)>
+  - Component did update
+
+- ComponentWillUnmount
+
+- Never compare react life cycles method with fuctional component
