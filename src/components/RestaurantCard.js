@@ -7,14 +7,14 @@ const RestaurantCard = (props) => {
     restData?.info;
 
   return (
-    <div className="restaurant-card">
+    <div className="m-4 p-4 w-[250px] bg-gray-200 rounded-lg hover:bg-gray-400">
       <img
-        className="restaurant-logo"
+        className="rounded-lg"
         src={CDN_LINK + cloudinaryImageId}
         alt="resturant logo"
       />
       <div className="restuarant-content-container">
-        <h3 className="restuarant-name">{name}</h3>
+        <h3 className="font-bold py-4 text-lg">{name}</h3>
         <p className="cuisines">{cuisines.join(", ")}</p>
         <p>{costForTwo}</p>
         <div className="rating-time-container">

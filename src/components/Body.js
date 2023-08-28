@@ -41,16 +41,17 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="flex items-center">
+        <div className="m-4 p-4">
           <input
-            className="search-box"
+            className="border-solid border-black border"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               // Filter the restraunt caards and update the UI
               // searchText
@@ -60,28 +61,28 @@ const Body = () => {
                 return restro.info.name
                   .toLocaleLowerCase()
                   .includes(searchText.toLocaleLowerCase());
-                // console.log(restro.info.name.includes(searchText));
               });
-              console.log(filteredRestro);
               setFilteredRestaurant(filteredRestro);
             }}
           >
             Search
           </button>
         </div>
-        <button
-          onClick={() => {
-            const filteredListOfRestaurants = listOfRestaurants.filter(
-              (res) => res.info.avgRating > 4
-            );
-            setFilteredRestaurant(filteredListOfRestaurants);
-          }}
-          className="filter-btn"
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="m-4 p-4">
+          <button
+            onClick={() => {
+              const filteredListOfRestaurants = listOfRestaurants.filter(
+                (res) => res.info.avgRating > 4
+              );
+              setFilteredRestaurant(filteredListOfRestaurants);
+            }}
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="restaurant-container">
+      <div className="flex flex-wrap">
         {filteredRestaurant.map((restObj) => (
           <Link to={"/restaurants/" + restObj.info.id} key={restObj.info.id}>
             <RestaurantCard restData={restObj} />
