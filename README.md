@@ -411,3 +411,26 @@ React is a library. It can be imported as a javascript file in the code and it g
 - ComponentWillUnmount
 
 - Never compare react life cycles method with fuctional component
+
+# Single resposibility principle
+
+- Each of the component should have a single responsibility
+- maintaining the code in a modular fashion
+- modularity
+
+  - break down the code into different different small small modules, so that the code becomes more maintainable and more testable
+
+- costom hooks
+  - hooks are like utility functions
+
+# Chunking
+
+# Code Spliting
+
+# Dynamic Bundling
+
+# Lazy Loading
+
+# Ondemand Loading
+
+# dynamic import
