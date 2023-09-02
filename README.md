@@ -447,3 +447,11 @@ React is a library. It can be imported as a javascript file in the code and it g
 ## tailwindcss
 
 - rapidly build modern websites without ever leaving html.
+
+## Higher order components
+
+- Higher order component is the one take a component as input and returns a enhanced component
+
+# useContext
+
+- to avoid props drilling

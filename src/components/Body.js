@@ -1,8 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -36,6 +37,12 @@ const Body = () => {
     );
   }
 
+  const { loggedInUser, setUserName } = useContext(UserContext);
+
+  const handleChange = (e) => {
+    setUserName(e.target.value);
+  };
+
   // Conditional rendering
   return !listOfRestaurants?.length ? (
     <Shimmer />
@@ -55,7 +62,6 @@ const Body = () => {
             onClick={() => {
               // Filter the restraunt caards and update the UI
               // searchText
-              console.log(listOfRestaurants);
 
               const filteredRestro = listOfRestaurants.filter((restro) => {
                 return restro.info.name
@@ -80,6 +86,14 @@ const Body = () => {
           >
             Top Rated Restaurants
           </button>
+        </div>
+        <div className="m-4 p-4">
+          <label className="pr-2">User Name</label>
+          <input
+            value={loggedInUser}
+            onChange={handleChange}
+            className="border border-black p-2"
+          />
         </div>
       </div>
       <div className="flex flex-wrap">
