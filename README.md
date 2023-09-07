@@ -452,6 +452,53 @@ React is a library. It can be imported as a javascript file in the code and it g
 
 - Higher order component is the one take a component as input and returns a enhanced component
 
+  # React dev tools chrome extension
+
 # useContext
 
 - to avoid props drilling
+
+## Redux
+
+- Redux is not mandaratory
+- React and Redux are different libraries
+- Zustand is another library like redux
+- Redux is Mainly used to manage the state of our application
+- When we use redux our application would become easier to debugg
+
+- A prodicatble state container for JS apps
+
+# RTK Redux Tool Kit
+
+- Redux took kit store is kind of like a big javascript object with a lot of data inside it and it is kept in a global central place
+
+- slices
+
+  - Small portions of the redux tool
+  - we make logical partitions and they are slices
+  - when click on a particular button it dispatches an action
+  - then it calls a function
+  - the fuction internaly modifies the card(slice).
+  - the function is known as reducer.
+  - when hit on the add button it dispaches an action which calles a reducer fuction which updtes the slice the redux store.
+
+- Read Data
+
+  - selector
+  - ude a selector and the selector will give data
+
+- Subscribing to the store
+  - it is sync with the store
+  - suscribing is used by selector
+
+# Redux steps
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector
+
+
+- reducer is a combination of small reducers
