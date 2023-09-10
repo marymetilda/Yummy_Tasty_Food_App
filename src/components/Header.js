@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import logo from "../../assets/logo.jpeg";
+// import logo from "../../assets/FinalBg.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
@@ -17,8 +17,8 @@ const Header = () => {
 
   return (
     <div className="flex justify-between items-center bg-pink-100 shadow-lg mb-2 px-4 sm:bg-yellow-100 lg:bg-green-100">
-      <div className="logo-container">
-        <img className="w-32 rounded-full" src={logo} alt="logo" />
+      <div className="logo-container w-32">
+        <img className="w-32 h-auto rounded-full" src='https://cdn3d.iconscout.com/3d/premium/thumb/burger-5863026-4897345.png' alt="logo" />
       </div>
       <div className="nav-items flex">
         <ul className="flex p-4 m-4">

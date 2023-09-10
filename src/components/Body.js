@@ -51,6 +51,7 @@ const Body = () => {
       <div className="flex items-center">
         <div className="m-4 p-4">
           <input
+          data-testid='searchInput'
             className="border-solid border-black border"
             value={searchText}
             onChange={(e) => {
@@ -96,7 +97,7 @@ const Body = () => {
           />
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
         {filteredRestaurant.map((restObj) => (
           <Link to={"/restaurants/" + restObj.info.id} key={restObj.info.id}>
             <RestaurantCard restData={restObj} />

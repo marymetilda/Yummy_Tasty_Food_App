@@ -500,5 +500,50 @@ React is a library. It can be imported as a javascript file in the code and it g
 - dispatch(action)
 - Selector
 
-
 - reducer is a combination of small reducers
+
+# Types of testing(developer)
+
+- unit testing
+- integration testing
+- end to end testing - e2e testing
+
+- unit testing
+  - test react component in isolation
+- integration testing
+
+  - testing the integration of the component
+
+- end to end testing
+  - all the flows in the application
+  - it requires need lots of tools
+
+# React testing library
+
+- jest javascript testing library
+
+# seting up testing inour app
+
+- install react testing library
+- install jset
+- install Babel dependencies
+- configure Babel
+- configure parcel config file to disable default babel transpilation
+- jest configuration
+  - npx jest --init
+- install jsdom library(if jest version is greater than 28)
+- install @babel/preset-react to make JSX work in jest cases
+- add it to babel config file
+- install @testing-library/jest-dom
+
+`_ _` = dunder tests
+
+- `it` and `test` are same thing
+- if there is fetch function or state updates in the testing component, then wrap the render function inside `act` fuction which comes from react-dom/test-utils
+
+# helper functions in test
+
+- beforeAll(() => {});
+- beforeEach(() => {});
+- afterAll(() => {});
+- afterEach(() => {});

@@ -5,7 +5,6 @@ const RestaurantCategory = ({
   shouldShowItems,
   handleButtonClick,
 } = props) => {
-  
   return (
     <div className="w-1/2 mx-auto my-4 bg-gray-50 shadow-lg p-4 ">
       {/**Header */}
@@ -19,7 +18,9 @@ const RestaurantCategory = ({
         <span>⬇️</span>
       </button>
       {/**Accordion Body */}
-      {shouldShowItems && <ItemList items={data.itemCards} />}
+      {shouldShowItems && (
+        <ItemList items={data.itemCards} buttonLabel="Add +" />
+      )}
     </div>
   );
 };

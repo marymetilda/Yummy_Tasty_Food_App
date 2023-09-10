@@ -1,13 +1,17 @@
 import { useDispatch } from "react-redux";
 import { CDN_LINK } from "../utils/constants";
-import { addItem } from "../utils/cartSlice";
+import { addItem, removeItem } from "../utils/cartSlice";
 
-const ItemList = ({ items } = props) => {
+const ItemList = ({ items, buttonLabel } = props) => {
   const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
     // Dispatch an action
-    dispatch(addItem(item));
+    if (buttonLabel === "Add +") {
+      dispatch(addItem(item));
+    } else {
+      dispatch(removeItem(item));
+    }
   };
 
   return (
@@ -16,6 +20,7 @@ const ItemList = ({ items } = props) => {
         {items.map((item) => {
           return (
             <div
+              data-testid="food-item"
               key={item.card.info.id}
               className="p-2 m-2 w-full border-b-4 border-b-gray-200 flex items-center gap-4"
             >
@@ -39,7 +44,7 @@ const ItemList = ({ items } = props) => {
                   onClick={() => handleAddItem(item)}
                   className="p-2 rounded-lg bg-black text-white shadow-lg absolute top-0 left-[35%] w-20"
                 >
-                  Add +
+                  {buttonLabel}
                 </button>
               </div>
             </div>
