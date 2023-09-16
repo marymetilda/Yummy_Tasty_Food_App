@@ -308,3 +308,242 @@ React is a library. It can be imported as a javascript file in the code and it g
 - State react variable
   - Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
   - When re-rendering react is finding fifference of old virtual dom and new virtual dom
+
+# useEffect
+
+- useEffect is basically called after every render of the component.
+- but since we put dependancy array it changes the behavior of the render.
+- If we put no dependancy array it will render every time when the component render.
+- If the dependancy array is empty, then useEffect is called on only initial render.
+- If we put something on the dependancy array, it is only called when the dependancy changes.
+
+## React router dom
+
+- where ever we have to use routes, we have to create a routing configuration
+- import { createBrowserRouter } from "react-router-dom";
+- createBrowserRouter will create a routing configuration for us.
+- creating routing configuration inside our app router:- we are developing a router and we will be passing this configuration inside the createBrowserRouter.
+- Configuration means that some information that will descide what will happen on a specific route
+  - an information that will tell the browser router that what will happen on a specific path.
+- createBrowserRouter take a list of paths
+
+- RouterProvider
+
+  - RouterProvider will provide our routing configuration to the app
+
+- React router dom gives as access to an important hook useRouterError
+- It gives more information about the error
+
+- children routers
+
+- Never use anger tags in react, It will reload the whole page
+- use Link component from react-router-dom
+- it works exactly like anger tags
+
+## Routing
+
+- There are two types of routing that we can have in our web application.
+
+  - 1. Client side routing
+    - not making any network call
+  - 2. Server side routing
+    - we make a network call and the page is coming from server
+
+- Single page application
+
+  - It is one page and only the components getting rendered.
+
+- Dynamic routing
+
+  - `:` tells that that part is dynamic
+
+- Never update state variable directly
+
+## React class components
+
+- component did mount
+
+  - run when after the component is rendereds
+
+- life cycle method of react class component
+
+  - parent constructor
+  - parent render
+
+    - child1 constructor
+    - child1 render
+
+    - child2 constructor
+    - child2 render
+
+    - child3 constructor
+    - child3 render
+
+  <DOM UPDATED - IN SINGLE BATCH>
+
+  - child1 component did mount
+  - child2 component did mount
+  - child3 component did mount
+
+  - parent component did mount
+
+- Componenet did mount is used to make an API call
+
+- https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+- updating dom is the most expencing thing.
+- so react try to batch up all the child rendering
+
+- Mounting life cycle
+
+  - Constructior(dummy)
+  - Render(dummy)
+    - <HTML dummy >
+  - Component Did Moung
+    <API Call>
+    <this.setState> -> State variable is updated
+
+- Update life cycle
+
+  - render(API data)
+    <HTML (new API data)>
+  - Component did update
+
+- ComponentWillUnmount
+
+- Never compare react life cycles method with fuctional component
+
+# Single resposibility principle
+
+- Each of the component should have a single responsibility
+- maintaining the code in a modular fashion
+- modularity
+
+  - break down the code into different different small small modules, so that the code becomes more maintainable and more testable
+
+- costom hooks
+  - hooks are like utility functions
+
+# Chunking
+
+# Code Spliting
+
+# Dynamic Bundling
+
+# Lazy Loading
+
+# Ondemand Loading
+
+# dynamic import
+
+## Css frame works
+
+##SASS & SCSS
+##Styled-components
+##Materal ui
+##Bootsrap
+##Chakra ui
+##ant design
+
+## tailwindcss
+
+- rapidly build modern websites without ever leaving html.
+
+## Higher order components
+
+- Higher order component is the one take a component as input and returns a enhanced component
+
+  # React dev tools chrome extension
+
+# useContext
+
+- to avoid props drilling
+
+## Redux
+
+- Redux is not mandaratory
+- React and Redux are different libraries
+- Zustand is another library like redux
+- Redux is Mainly used to manage the state of our application
+- When we use redux our application would become easier to debugg
+
+- A prodicatble state container for JS apps
+
+# RTK Redux Tool Kit
+
+- Redux took kit store is kind of like a big javascript object with a lot of data inside it and it is kept in a global central place
+
+- slices
+
+  - Small portions of the redux tool
+  - we make logical partitions and they are slices
+  - when click on a particular button it dispatches an action
+  - then it calls a function
+  - the fuction internaly modifies the card(slice).
+  - the function is known as reducer.
+  - when hit on the add button it dispaches an action which calles a reducer fuction which updtes the slice the redux store.
+
+- Read Data
+
+  - selector
+  - ude a selector and the selector will give data
+
+- Subscribing to the store
+  - it is sync with the store
+  - suscribing is used by selector
+
+# Redux steps
+
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- Selector
+
+- reducer is a combination of small reducers
+
+# Types of testing(developer)
+
+- unit testing
+- integration testing
+- end to end testing - e2e testing
+
+- unit testing
+  - test react component in isolation
+- integration testing
+
+  - testing the integration of the component
+
+- end to end testing
+  - all the flows in the application
+  - it requires need lots of tools
+
+# React testing library
+
+- jest javascript testing library
+
+# seting up testing inour app
+
+- install react testing library
+- install jset
+- install Babel dependencies
+- configure Babel
+- configure parcel config file to disable default babel transpilation
+- jest configuration
+  - npx jest --init
+- install jsdom library(if jest version is greater than 28)
+- install @babel/preset-react to make JSX work in jest cases
+- add it to babel config file
+- install @testing-library/jest-dom
+
+`_ _` = dunder tests
+
+- `it` and `test` are same thing
+- if there is fetch function or state updates in the testing component, then wrap the render function inside `act` fuction which comes from react-dom/test-utils
+
+# helper functions in test
+
+- beforeAll(() => {});
+- beforeEach(() => {});
+- afterAll(() => {});
+- afterEach(() => {});

@@ -1,4 +1,4 @@
-import CDN_LINK from "../utils/constants";
+import { CDN_LINK } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { restData } = props;
@@ -7,15 +7,15 @@ const RestaurantCard = (props) => {
     restData?.info;
 
   return (
-    <div className="restaurant-card">
-        <img
-          className="restaurant-logo"
-          src={CDN_LINK + cloudinaryImageId}
-          alt="resturant logo"
-        />
+    <div data-testid='resCard' className="m-4 p-4 w-[250px] h-[350px] bg-gray-200 rounded-lg hover:bg-gray-400">
+      <img
+        className="rounded-lg h-32 w-full"
+        src={CDN_LINK + cloudinaryImageId}
+        alt="resturant logo"
+      />
       <div className="restuarant-content-container">
-        <h3 className="restuarant-name">{name}</h3>
-        <p className="cuisines">{cuisines.join(", ")}</p>
+        <h3 className="font-bold py-3 text-lg">{name}</h3>
+        <p className="overflow-hidden h-12 ">{cuisines.join(", ")}</p>
         <p>{costForTwo}</p>
         <div className="rating-time-container">
           <h4>{avgRating} Stars</h4>
