@@ -1,4 +1,4 @@
-# Namasthe-React
+# YummyTastyFoodApp
 
 ## Inception
 

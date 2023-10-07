@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div>
+    <div className="bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50 w-full min-h-[85vh] h-full">
       <h1 className="font-bold text-3xl p-4 m-4">Contact US Page</h1>
       <form>
         <input
