@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import Shimmer from "./Shimmer";
+import ShimmerMenu from "./ShimmerMenu";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -18,13 +18,13 @@ const RestaurantMenu = () => {
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  if (resInfo === null) return <Shimmer />;
+  if (resInfo === null) return <ShimmerMenu />;
 
   const { name, cuisines, costForTwoMessage } =
     resInfo?.cards[0]?.card?.card?.info;
 
   return (
-    <div className="text-center">
+    <div className="text-center bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50 w-screen min-h-screen h-full">
       <h1 className="font-bold my-6 text-2xl">{name}</h1>
       <p className="text-lg font-bold">
         {cuisines.join(",")} - {costForTwoMessage}

@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import ItemList from "./ItemList";
+
 import { clearCart } from "../utils/cartSlice";
+import ItemList from "./ItemList";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -10,13 +11,10 @@ const Cart = () => {
   };
 
   return (
-    <div className="text-center p-4 m-4">
+    <div className="text-center p-4 m-4 bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50 w-full min-h-[85vh] h-full">
       <h1 className="text-2xl font-bold">Cart</h1>
 
-      <div
-        className="w-1/2 m-auto
-    "
-      >
+      <div className="w-1/2 m-auto">
         <button
           onClick={handleClearCart}
           className="p-2 m-2 bg-black text-white rounded-lg"

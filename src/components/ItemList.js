@@ -22,11 +22,23 @@ const ItemList = ({ items, buttonLabel } = props) => {
             <div
               data-testid="food-item"
               key={item.card.info.id}
-              className="p-2 m-2 w-full border-b-4 border-b-gray-200 flex items-center gap-4"
+              className="p-2 m-2 w-full border-b-4 border-b-gray-200 flex flex-col lg:flex-row-reverse items-center gap-4"
             >
+              <div className="w-fit relative flex items-center justify-center">
+                <img
+                  className="w-[20vw] lg:w-[10vw]"
+                  src={CDN_LINK + item.card.info.imageId}
+                />
+                <button
+                  onClick={() => handleAddItem(item)}
+                  className="p-2 rounded-lg bg-black text-white shadow-lg absolute top-2 left-1/2 -translate-x-1/2 w-20"
+                >
+                  {buttonLabel}
+                </button>
+              </div>
               <div className="w-9/12">
-                <div className="py-2 text-left">
-                  <span className="">{item.card.info.name}</span>
+                <div className="py-2 text-left text-xl font-semibold">
+                  <span>{item.card.info.name}</span>
                   <span>
                     - ₹
                     {item.card.info.price
@@ -37,15 +49,6 @@ const ItemList = ({ items, buttonLabel } = props) => {
                 <p className="text-xs text-left">
                   {item.card.info.description}
                 </p>
-              </div>
-              <div className="w-3/12 relative">
-                <img src={CDN_LINK + item.card.info.imageId} />
-                <button
-                  onClick={() => handleAddItem(item)}
-                  className="p-2 rounded-lg bg-black text-white shadow-lg absolute top-0 left-[35%] w-20"
-                >
-                  {buttonLabel}
-                </button>
               </div>
             </div>
           );

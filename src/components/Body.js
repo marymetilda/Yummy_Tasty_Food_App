@@ -1,9 +1,9 @@
-import RestaurantCard from "./RestaurantCard";
-import { useContext, useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -37,31 +37,26 @@ const Body = () => {
     );
   }
 
-  const { loggedInUser, setUserName } = useContext(UserContext);
-
-  const handleChange = (e) => {
-    setUserName(e.target.value);
-  };
-
   // Conditional rendering
   return !listOfRestaurants?.length ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="flex items-center">
-        <div className="m-4 p-4">
+    <div className="bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50">
+      <div className="flex flex-col md:flex-row items-center justify-around">
+        <div className="m-4 px-8 bg-pink-100 sm:bg-yellow-100 md:bg-blue-100 lg:bg-green-100 flex items-center justify-center shadow-xl">
           <input
-          data-testid='searchInput'
-            className="border-solid border-black border"
+            placeholder="search your favorite"
+            data-testid="searchInput"
+            className="border-solid border-pink-200 sm:border-yellow-200 md:border-blue-200 lg:border-green-200 border outline-none p-2"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
-            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+            className="px-4 py-2 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 lg:bg-green-200 m-4 rounded-lg text-lg font-semibold"
             onClick={() => {
-              // Filter the restraunt caards and update the UI
+              // Filter the restraunt cards and update the UI
               // searchText
 
               const filteredRestro = listOfRestaurants.filter((restro) => {
@@ -75,7 +70,7 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="m-4 p-4">
+        <div className="m-4 p-4 shadow-xl bg-pink-100 sm:bg-yellow-100 md:bg-blue-100 lg:bg-green-100 md:w-[20vw]">
           <button
             onClick={() => {
               const filteredListOfRestaurants = listOfRestaurants.filter(
@@ -83,18 +78,10 @@ const Body = () => {
               );
               setFilteredRestaurant(filteredListOfRestaurants);
             }}
-            className="px-4 py-2 bg-gray-100 rounded-lg"
+            className="p-4 rounded-lg text-xl font-bold"
           >
             Top Rated Restaurants
           </button>
-        </div>
-        <div className="m-4 p-4">
-          <label className="pr-2">User Name</label>
-          <input
-            value={loggedInUser}
-            onChange={handleChange}
-            className="border border-black p-2"
-          />
         </div>
       </div>
       <div className="flex flex-wrap justify-center">

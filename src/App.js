@@ -12,30 +12,49 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import LoginPopup from "./components/LoginPopup";
+import classNames from "classnames";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
+  const [shouldShowPopup, setShouldShowPopup] = useState(true);
 
   // authentication
   useEffect(() => {
     // Make an API call and send username and password
     const data = {
-      name: "Metilda",
+      name: "Guest User",
     };
     setUserName(data.name);
   }, []);
+
+  const handleLogin = () => {
+    setShouldShowPopup(false);
+  };
+
+  const onLoginClick = () => {
+    setShouldShowPopup(true);
+  };
+
+  const containerStyle = classNames(
+    "elative bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50",
+    {
+      "h-screen overflow-hidden": shouldShowPopup,
+    }
+  );
 
   return (
     // provider used for redux
     <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <div className="app">
-          <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}>
-            <Header />
+        <div className={containerStyle}>
+          <UserContext.Provider value={{ loggedInUser: userName }}>
+            <Header onLoginClick={onLoginClick} />
           </UserContext.Provider>
           <Outlet />
+          {shouldShowPopup && <LoginPopup handleLogin={handleLogin} />}
         </div>
       </UserContext.Provider>
     </Provider>

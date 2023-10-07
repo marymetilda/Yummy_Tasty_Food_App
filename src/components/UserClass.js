@@ -14,7 +14,9 @@ class UserClass extends React.Component {
   }
 
   async componentDidMount() {
-    const data = await fetch("https://corsproxy.io/?https://api.github.com/users/marymetilda");
+    const data = await fetch(
+      "https://corsproxy.io/?https://api.github.com/users/mary-metilda"
+    );
     const json = await data.json();
 
     this.setState({
@@ -26,8 +28,8 @@ class UserClass extends React.Component {
     const { name, location, avatar_url } = this.state.userInfo;
 
     return (
-      <div className="user-card">
-        <img src={avatar_url} alt="avatar" />
+      <div className="flex flex-col items-center justify-normal m-4 p-4 bg-pink-100 sm:bg-yellow-100 md:bg-blue-100 lg:bg-green-100 shadow-2xl">
+        <img className="w-32 h-32 rounded-full" src={avatar_url} alt="avatar" />
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
         <h4>Contact: metilda0496@gmail.com</h4>
