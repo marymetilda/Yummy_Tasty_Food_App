@@ -25,6 +25,8 @@ const Body = () => {
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
 
+    console.log(restroData);
+
     setListOfRestaurants(restroData);
     setFilteredRestaurant(restroData);
   };
