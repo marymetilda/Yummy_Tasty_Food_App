@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 
-const Header = ({onLoginClick}) => {
-  const [btnName, setBtnName] = useState("Login");
+const Header = ({ onLoginClick }) => {
+  const [btnName, setBtnName] = useState("Logout");
   const [shouldShowList, setShouldShowList] = useState(false);
 
   const onlineStatus = useOnlineStatus();
@@ -57,13 +57,13 @@ const Header = ({onLoginClick}) => {
             className="login hidden lg:flex"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-              onLoginClick()
+              onLoginClick();
             }}
           >
             {btnName}
           </button>
           <li className="font-bold pl-4 hidden lg:flex">{loggedInUser}</li>
-          <div className="relative flex flex-col lg:hidden bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 outline-none p-4 pr-6 rounded-lg shadow-md">
+          <div className="relative flex flex-col lg:hidden bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 outline-none p-4 md:pr-6 rounded-lg shadow-md">
             <button
               onClick={handleButtonClick}
               className="w-full flex justify-between"
@@ -72,21 +72,31 @@ const Header = ({onLoginClick}) => {
               <span>⬇️</span>
             </button>
             {shouldShowList && (
-              <div className="absolute z-30 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 top-12 left-0 right-0 w-[200%] sm:w-full">
-                <button onClick={handleClick} className="font-bold pl-4">
+              <div className="absolute z-30 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 top-12 left-1/2 -translate-x-1/2 w-[200%] sm:w-full flex flex-col items-start px-4 pb-4">
+                <button onClick={handleClick} className="font-bold">
                   Online: {onlineStatus ? "🟢" : "🔴"}
                 </button>
-                <button onClick={handleClick} className="font-bold pl-4">
+                <button onClick={handleClick} className="font-bold">
                   <Link to="/">Home</Link>
                 </button>
-                <button onClick={handleClick} className="font-bold pl-4">
+                <button onClick={handleClick} className="font-bold">
                   <Link to="/about">About Us</Link>
                 </button>
-                <button onClick={handleClick} className="font-bold pl-4">
+                <button onClick={handleClick} className="font-bold">
                   <Link to="/contact">Contact Us</Link>
                 </button>
-                <button onClick={handleClick} className="font-bold pl-4">
+                <button onClick={handleClick} className="font-bold">
                   <Link to="/grocery">Grocery</Link>
+                </button>
+                <button
+                  className="font-bold"
+                  onClick={() => {
+                    btnName === setBtnName("Logout");
+                    onLoginClick();
+                    setShouldShowList(false);
+                  }}
+                >
+                  <Link to="/">{btnName}</Link>
                 </button>
               </div>
             )}
