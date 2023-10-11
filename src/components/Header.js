@@ -73,6 +73,9 @@ const Header = ({ onLoginClick }) => {
             </button>
             {shouldShowList && (
               <div className="absolute z-30 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 top-12 left-1/2 -translate-x-1/2 w-[200%] sm:w-full flex flex-col items-start px-4 pb-4">
+                <span className="font-medium whitespace-nowrap text-left sm:hidden flex">
+                  {loggedInUser}
+                </span>
                 <button
                   onClick={handleClick}
                   className="font-medium whitespace-nowrap md:font-bold text-left"
