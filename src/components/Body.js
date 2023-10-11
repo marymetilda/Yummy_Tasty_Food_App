@@ -21,11 +21,10 @@ const Body = () => {
 
     const json = await data.json();
     // optional chaning
+    const cardIndex = json?.data?.cards[2]?.card?.card?.gridElements ? 2 : 3;
     const restroData =
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      json?.data?.cards[cardIndex]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
-
-    console.log(restroData);
 
     setListOfRestaurants(restroData);
     setFilteredRestaurant(restroData);

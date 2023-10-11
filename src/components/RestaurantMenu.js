@@ -11,12 +11,15 @@ const RestaurantMenu = () => {
   const [shouldShowList, setShouldShowList] = useState(false);
 
   const resInfo = useRestaurantMenu(resId);
-  const categories =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (c) =>
-        c.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    );
+  console.log({ resInfo });
+  const cardIndex = resInfo?.cards[2]?.groupedCard ? 2 : 3;
+  const categories = resInfo?.cards[
+    cardIndex
+  ]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    (c) =>
+      c.card?.card?.["@type"] ===
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  );
 
   if (resInfo === null) return <ShimmerMenu />;
 
