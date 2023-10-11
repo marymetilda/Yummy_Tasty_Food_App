@@ -44,11 +44,11 @@ const Body = () => {
   ) : (
     <div className="bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50">
       <div className="flex flex-col md:flex-row items-center justify-around">
-        <div className="px-8 py-4 bg-pink-100 sm:bg-yellow-100 md:bg-blue-100 lg:bg-green-100 flex items-center justify-center shadow-xl">
+        <div className="md:px-8 py-4 bg-pink-100 sm:bg-yellow-100 md:bg-blue-100 lg:bg-green-100 flex items-center justify-center shadow-xl">
           <input
             placeholder="search your favorite"
             data-testid="searchInput"
-            className="border-solid border-pink-200 sm:border-yellow-200 md:border-blue-200 lg:border-green-200 border outline-none p-2"
+            className="border-solid border-pink-200 sm:border-yellow-200 md:border-blue-200 lg:border-green-200 border outline-none p-2 w-1/2 md:w-full"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);

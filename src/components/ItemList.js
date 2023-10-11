@@ -24,14 +24,14 @@ const ItemList = ({ items, buttonLabel } = props) => {
               key={item.card.info.id}
               className="p-2 m-2 w-full border-b-4 border-b-gray-200 flex flex-col lg:flex-row-reverse items-center gap-4"
             >
-              <div className="w-fit relative flex items-center justify-center">
+              <div className="w-fit relative flex flex-col items-center justify-center gap-4">
                 <img
-                  className="w-[20vw] lg:w-[10vw]"
+                  className="w-[40vw] md:w-[20vw] lg:w-[10vw]"
                   src={CDN_LINK + item.card.info.imageId}
-                />
+                /> 
                 <button
                   onClick={() => handleAddItem(item)}
-                  className="p-2 rounded-lg bg-black text-white shadow-lg absolute top-2 left-1/2 -translate-x-1/2 w-20"
+                  className="p-2 rounded-lg bg-black text-white shadow-lg md:absolute top-2 left-1/2 md:-translate-x-1/2 w-20"
                 >
                   {buttonLabel}
                 </button>
