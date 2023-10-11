@@ -6,7 +6,7 @@ const RestaurantCategory = ({
   handleButtonClick,
 } = props) => {
   return (
-    <div className="w-1/2 mx-auto my-4 bg-gray-50 shadow-lg p-4">
+    <div className="w-full md:w-1/2 mx-auto my-4 bg-gray-50 shadow-lg p-4">
       {/**Header */}
       <button
         onClick={handleButtonClick}
