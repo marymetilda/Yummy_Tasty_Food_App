@@ -72,7 +72,7 @@ const Header = ({ onLoginClick }) => {
               <span>⬇️</span>
             </button>
             {shouldShowList && (
-              <div className="absolute z-30 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 top-12 left-1/2 -translate-x-1/2 w-[200%] sm:w-full flex flex-col items-start px-4 pb-4">
+              <div className="absolute z-30 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 top-12 left-1/2 -translate-x-1/2 w-[200%] sm:w-full flex flex-col items-start px-4 pb-4 text-left">
                 <button onClick={handleClick} className="font-bold">
                   Online: {onlineStatus ? "🟢" : "🔴"}
                 </button>

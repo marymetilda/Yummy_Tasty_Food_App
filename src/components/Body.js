@@ -44,7 +44,7 @@ const Body = () => {
   ) : (
     <div className="bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50">
       <div className="flex flex-col md:flex-row items-center justify-around">
-        <div className="m-4 px-8 bg-pink-100 sm:bg-yellow-100 md:bg-blue-100 lg:bg-green-100 flex items-center justify-center shadow-xl">
+        <div className="px-8 py-4 bg-pink-100 sm:bg-yellow-100 md:bg-blue-100 lg:bg-green-100 flex items-center justify-center shadow-xl">
           <input
             placeholder="search your favorite"
             data-testid="searchInput"
