@@ -34,7 +34,7 @@ const Header = ({ onLoginClick }) => {
         />
       </div>
       <div className="nav-items flex">
-        <ul className="flex items-center p-4 m-4">
+        <ul className="flex items-center p-4 md:m-4">
           <li className="px-4 hidden lg:flex">
             Online Status: {onlineStatus ? "🟢" : "🔴"}
           </li>
@@ -50,7 +50,7 @@ const Header = ({ onLoginClick }) => {
           <li className="px-4 hidden lg:flex">
             <Link to="/grocery">Grocery</Link>
           </li>
-          <li className="px-4 font-bold text-xl">
+          <li className="px-4 font-medium md:font-bold text-sm whitespace-nowrap md:text-xl">
             <Link to="/cart">Cart-({cartItems.length} items)</Link>
           </li>
           <button
@@ -72,24 +72,39 @@ const Header = ({ onLoginClick }) => {
               <span>⬇️</span>
             </button>
             {shouldShowList && (
-              <div className="absolute z-30 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 top-12 left-1/2 -translate-x-1/2 w-[200%] sm:w-full flex flex-col items-start px-4 pb-4 text-left">
-                <button onClick={handleClick} className="font-bold">
+              <div className="absolute z-30 bg-pink-200 sm:bg-yellow-200 md:bg-blue-200 top-12 left-1/2 -translate-x-1/2 w-[200%] sm:w-full flex flex-col items-start px-4 pb-4">
+                <button
+                  onClick={handleClick}
+                  className="font-medium whitespace-nowrap md:font-bold text-left"
+                >
                   Online: {onlineStatus ? "🟢" : "🔴"}
                 </button>
-                <button onClick={handleClick} className="font-bold">
+                <button
+                  onClick={handleClick}
+                  className="font-medium whitespace-nowrap md:font-bold text-left"
+                >
                   <Link to="/">Home</Link>
                 </button>
-                <button onClick={handleClick} className="font-bold">
+                <button
+                  onClick={handleClick}
+                  className="font-medium whitespace-nowrap md:font-bold text-left"
+                >
                   <Link to="/about">About Us</Link>
                 </button>
-                <button onClick={handleClick} className="font-bold">
+                <button
+                  onClick={handleClick}
+                  className="font-medium whitespace-nowrap md:font-bold text-left"
+                >
                   <Link to="/contact">Contact Us</Link>
                 </button>
-                <button onClick={handleClick} className="font-bold">
+                <button
+                  onClick={handleClick}
+                  className="font-medium whitespace-nowrap md:font-bold text-left"
+                >
                   <Link to="/grocery">Grocery</Link>
                 </button>
                 <button
-                  className="font-bold"
+                  className="font-medium whitespace-nowrap md:font-bold text-left"
                   onClick={() => {
                     btnName === setBtnName("Logout");
                     onLoginClick();
