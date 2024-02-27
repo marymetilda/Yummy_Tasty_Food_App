@@ -9,8 +9,8 @@ const useRestaurantMenu = (resId) => {
   }, []);
 
   const fetchData = async () => {
-    // add https://corsproxy.io/? before api to avoid cors error
-    const data = await fetch('https://corsproxy.io/?' + MENU_API_URL + resId);
+    // add hhttps://proxy.cors.sh/ before api to avoid cors error
+    const data = await fetch("https://proxy.cors.sh/" + MENU_API_URL + resId);
 
     const json = await data.json();
     setResInfo(json.data);

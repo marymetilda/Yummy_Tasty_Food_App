@@ -11,20 +11,17 @@ const RestaurantMenu = () => {
   const [shouldShowList, setShouldShowList] = useState(false);
 
   const resInfo = useRestaurantMenu(resId);
-  console.log({ resInfo });
-  const cardIndex = resInfo?.cards[2]?.groupedCard ? 2 : 3;
-  const categories = resInfo?.cards[
-    cardIndex
-  ]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-    (c) =>
-      c.card?.card?.["@type"] ===
-      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-  );
+  const categories =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
 
   if (resInfo === null) return <ShimmerMenu />;
 
   const { name, cuisines, costForTwoMessage } =
-    resInfo?.cards[0]?.card?.card?.info;
+    resInfo?.cards[2]?.card?.card?.info;
 
   return (
     <div className="text-center bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50 w-screen min-h-screen h-full">
@@ -32,7 +29,7 @@ const RestaurantMenu = () => {
       <p className="text-lg font-bold">
         {cuisines.join(",")} - {costForTwoMessage}
       </p>
-      {categories.map((category, index) => {
+      {categories?.map((category, index) => {
         const handleClick = () => {
           setIndexToShow(index);
           if (index === indexToShow) {
