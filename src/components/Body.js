@@ -15,21 +15,17 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://proxy.cors.sh/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    const res = await fetch(
+      "https://foodapp-backend-node.onrender.com/api/restaurants"
     );
-
-    const json = await data.json();
-    // optional chaning
-    const restroData =
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
+    const restroData = await res.json();
 
     setListOfRestaurants(restroData);
     setFilteredRestaurant(restroData);
   };
 
   const onlineStatus = useOnlineStatus();
+  console.log({listOfRestaurants});
 
   if (!onlineStatus) {
     return (
@@ -60,7 +56,7 @@ const Body = () => {
               // searchText
 
               const filteredRestro = listOfRestaurants.filter((restro) => {
-                return restro.info.name
+                return restro.name
                   .toLocaleLowerCase()
                   .includes(searchText.toLocaleLowerCase());
               });
@@ -74,7 +70,7 @@ const Body = () => {
           <button
             onClick={() => {
               const filteredListOfRestaurants = listOfRestaurants.filter(
-                (res) => res.info.avgRating > 4
+                (res) => res.avgRating > 4
               );
               setFilteredRestaurant(filteredListOfRestaurants);
             }}
@@ -86,7 +82,7 @@ const Body = () => {
       </div>
       <div className="flex flex-wrap justify-center">
         {filteredRestaurant.map((restObj) => (
-          <Link to={"/restaurants/" + restObj.info.id} key={restObj.info.id}>
+          <Link to={"/restaurants/" + restObj.id} key={restObj.id}>
             <RestaurantCard restData={restObj} />
           </Link>
         ))}
