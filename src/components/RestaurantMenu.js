@@ -10,26 +10,27 @@ const RestaurantMenu = () => {
   const [indexToShow, setIndexToShow] = useState();
   const [shouldShowList, setShouldShowList] = useState(false);
 
-  const resInfo = useRestaurantMenu(resId);
-  const categories =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (c) =>
-        c.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    );
+  const categories = useRestaurantMenu(resId);
+  // const categories =
+  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+  //     (c) =>
+  //       c.card?.card?.["@type"] ===
+  //       "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+  //   );
 
-  if (resInfo === null) return <ShimmerMenu />;
+  // console.log({ categories });
 
-  const { name, cuisines, costForTwoMessage } =
-    resInfo?.cards[2]?.card?.card?.info;
+  if (categories === null) return <ShimmerMenu />;
+
+  const { name, cuisines, costForTwoMessage } = categories;
 
   return (
     <div className="text-center bg-pink-50 sm:bg-yellow-50 md:bg-blue-50 lg:bg-green-50 w-screen min-h-screen h-full">
       <h1 className="font-bold my-6 text-2xl">{name}</h1>
       <p className="text-lg font-bold">
-        {cuisines.join(",")} - {costForTwoMessage}
+        {cuisines?.join(",")} - {costForTwoMessage}
       </p>
-      {categories?.map((category, index) => {
+      {categories.menuItem?.map((category, index) => {
         const handleClick = () => {
           setIndexToShow(index);
           if (index === indexToShow) {
@@ -39,8 +40,8 @@ const RestaurantMenu = () => {
 
         return (
           <RestaurantCategory
-            key={category.card.card.title}
-            data={category.card.card}
+            key={category.title}
+            data={category}
             shouldShowItems={
               index === indexToShow && shouldShowList ? true : false
             }

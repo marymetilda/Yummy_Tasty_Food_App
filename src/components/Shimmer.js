@@ -12,8 +12,11 @@ const Shimmer = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center">
-        {Array.from({ length: 15 }, () => (
-          <div className="m-4 p-4 w-[250px] h-[350px] rounded-[4px]">
+        {Array.from({ length: 15 }, (_,index) => (
+          <div
+            key={index}
+            className="m-4 p-4 w-[250px] h-[350px] rounded-[4px]"
+          >
             <ShimmerSkeleton />
           </div>
         ))}
